@@ -15,12 +15,12 @@
         //alert(" "+selectedValBranch.value)
         var valSem=document.getElementById("sem");
         var selectedValSem=valSem.options[valSem.selectedIndex];
+        var selectedValSemval=selectedValSem.value;
+        var selectedValBranchval=selectedValBranch.value;
 
-        if(selectedValSem.value =="6" && selectedValBranch.value == "CSE")
-        {
-          localStorage.setItem(sem,selectedValSem.value);
+        document.cookie="semval="+selectedValSemval;
+        document.cookie="branchval="+selectedValBranchval;
           location.href = "demo.php";
-        }
     };
     </script>
 </head>
@@ -32,24 +32,24 @@
     <form action="demo.php" method="post">
     <select class="col-md-12 center Branch" id="branch">
     <option value="null">Select the branch</option>
-        <option value="CSE">CSE -- only this is working</option>
-        <option value="ME">ME</option>
-        <option value="CE">CE</option>
-        <option value="ECE">ECE</option>
-        <option value="IT">IT</option>
+        <option value="cse">CSE -- only this is working</option>
+        <option value="me">ME</option>
+        <option value="ce">CE</option>
+        <option value="ece">ECE</option>
+        <option value="it">IT</option>
     </select>
    </div>
    <div class="Sem">
    <select class="col-md-12 center Sem" id="sem" name="sem">
    <option value="null"> Select the Semester</option>
-       <option value="Sem 1">Sem 1 -- only this is working</option>
-       <option value="Sem 2">Sem 2</option>
-       <option value="Sem 3">Sem 3</option>
-       <option value="Sem 4">Sem 4</option>
-       <option value="Sem 5">Sem 5</option>
+       <option value="1">Sem 1 -- only this is working</option>
+       <option value="2">Sem 2</option>
+       <option value="3">Sem 3</option>
+       <option value="4">Sem 4</option>
+       <option value="5">Sem 5</option>
        <option value="6">Sem 6</option>
-       <option value="Sem 7">Sem 7</option>
-       <option value="Sem 8">Sem 8</option>
+       <option value="7">Sem 7</option>
+       <option value="8">Sem 8</option>
    </select>
    </div>
    <button type="submit" class="btn btn-primary go" onclick="al()">GO</button>

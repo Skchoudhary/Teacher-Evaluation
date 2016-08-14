@@ -1,0 +1,23 @@
+.Branch
+{
+    margin-top: 5%;
+    padding: 10px;
+}
+.Sem
+{
+    margin-top: 10%;
+    padding: 10px;
+}
+select.center
+{
+    text-align: center;
+}
+option
+{
+    text-align: center;
+}
+.go
+{
+    margin-top: 5%;
+    padding: 30px;
+}

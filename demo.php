@@ -9,8 +9,20 @@ session_start();
 
     }
     // Attempt select query execution
+    $semval=$_COOKIE["semval"];
+    $branchval=$_COOKIE["branchval"];
+    $branchval=strtolower($branchval);
+    //echo $semval;
+    //echo $branchval;
 
-    $sql ="SELECT subject FROM student_rec";
+ if($semval == 6 and $branchval == "cse")
+ {
+    $sql ="SELECT subject FROM student_rec where sem=$semval AND branch ='".$branchval."'";
+}
+else
+{
+    $sql="SELECT subject FROM student_rec where sem='1' AND branch = 'cse'";
+}
 
     if($result = mysqli_query($link, $sql)){
         if(mysqli_num_rows($result) > 0){
@@ -18,7 +30,7 @@ session_start();
             while($row = mysqli_fetch_array($result)){
                 array_push($sub,$row['subject']);
             }
-                print_r($sub);
+                //print_r($sub);
             // Close result set
 $_SESSION['sub']=$sub;
             mysqli_free_result($result);
@@ -35,14 +47,21 @@ $_SESSION['sub']=$sub;
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA_Compatible" content="IE=edge">
+    <meta name="vieport" content="width=device-width , initial-scale=1">
     <title>Demo</title>
     <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="bootstrap/css/semo.css">
 </head>
-<body>
+<body class="jumbotron">
 <div class="conatiner jumbotron">
     <div class="table">
         <form action="insert.php" method="post" >
+        <div class="text-right">
+         <label>Section</label>
+         <input type="text" placeholder="section" name="sec">
+        </div>
             <div class="table1 center-block">
                 <table class="table table-bordered table-hover table-responsive">
                     <tr>
@@ -270,7 +289,7 @@ $_SESSION['sub']=$sub;
                 </table>
             </div>
             <div class="submit">
-                <button class="btn btn-primary center-block marg" type="submit">Evaluate</button>
+                <button class="btn btn-primary center-block marg" type="submit">Submit</button>
             </div>
         </form>
     </div>

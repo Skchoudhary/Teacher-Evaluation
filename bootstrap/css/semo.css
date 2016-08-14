@@ -1,0 +1,14 @@
+@-moz-document url-prefix() {
+    fieldset {
+        display: table-cell;
+    }
+}
+
+.table
+{
+    margin-top: 4%;
+}
+.marg
+{
+    margin-top: 8%;
+}

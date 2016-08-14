@@ -14,7 +14,7 @@ $comm0= (int)$_POST["comm1"];
 $syll0=(int)$_POST["syll1"];
 $class0= (int)$_POST["class1"];
 $dis0= (int)$_POST["discp1"];
-$sec="a3";
+$sec=mysqli_real_escape_string($link, $_POST['sec']);
 
 $sql="insert into grades values('$sec','$comm0','$syll0','$dis0','$class0','$sub0')";
 if(mysqli_query($link, $sql))
@@ -28,7 +28,7 @@ $comm1= (int)$_POST["comm2"];
 $syll1=(int)$_POST["syll2"];
 $class1= (int)$_POST["class2"];
 $dis1= (int)$_POST["discp2"];
-$sec="a3";
+$sec=$_POST["sec"];
 
 $sql="insert into grades values('$sec','$comm1','$syll1','$dis1','$class1','$sub1')";
 if(mysqli_query($link, $sql))
@@ -42,7 +42,7 @@ $comm2= (int)$_POST["comm2"];
 $syll2=(int)$_POST["syll2"];
 $class2= (int)$_POST["class2"];
 $dis2= (int)$_POST["discp2"];
-$sec="a3";
+$sec=$_POST["sec"];
 
 $sql="insert into grades values('$sec','$comm2','$syll2','$dis2','$class2','$sub2')";
 if(mysqli_query($link, $sql))
@@ -56,7 +56,7 @@ $comm3= (int)$_POST["comm3"];
 $syll3=(int)$_POST["syll3"];
 $class3= (int)$_POST["class3"];
 $dis3= (int)$_POST["discp3"];
-$sec="a3";
+$sec=$_POST["sec"];
 
 $sql="insert into grades values('$sec','$comm3','$syll3','$dis3','$class3','$sub3')";
 if(mysqli_query($link, $sql))
@@ -70,7 +70,7 @@ $comm4= (int)$_POST["comm4"];
 $syll4=(int)$_POST["syll4"];
 $class4= (int)$_POST["class4"];
 $dis4= (int)$_POST["discp4"];
-$sec="a3";
+$sec=$_POST["sec"];
 
 $sql="insert into grades values('$sec','$comm4','$syll4','$dis4','$class4','$sub4')";
 if(mysqli_query($link, $sql))
